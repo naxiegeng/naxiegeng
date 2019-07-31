@@ -1,7 +1,7 @@
 ---
 title: 观影心得-狮子王
 ---
-![The_Lion_King_2019_poster](/Users/jasonfong/Downloads/The_Lion_King_2019_poster.jpg)
+![alt](https://upload.wikimedia.org/wikipedia/zh/0/08/The_Lion_King_2019_poster.jpg)
 
 狮子王是我第一部在 VCD 机上看到的动画片。当年 VCD 还是一种十分金贵的家电，现在估计没多少年轻人知道了。时隔二十多年，再看到「真猫」版的狮子王，感觉自然已经大不相同了。现在回想当年，人们纷纷渴望把电影院搬到自己家中；而如今却又去电影院看电影是消磨时光的好去处。人的欲望真的琢磨不透。
 
