@@ -8,9 +8,6 @@ cache:
   npm: true
   directories:
   - node_modules
-addons:
-  ssh_known_hosts:
-  - 211.159.155.66
 before_install:
 - openssl aes-256-cbc -K $encrypted_6c324be644e2_key -iv $encrypted_6c324be644e2_iv -in tx_deploy_key.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
@@ -19,9 +16,14 @@ before_install:
 - npm install -g hexo-cli
 - npm install -g hexo-server
 - npm install -g hexo-deployer-rsync
+- npm install -g hexo-deployer-git
+- npm i --save hexo-wordcount
 install:
 - npm i
 script:
-- hexo clean
 - hexo generate
-- hexo deploy
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: master

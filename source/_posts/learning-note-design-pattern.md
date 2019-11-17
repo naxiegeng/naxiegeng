@@ -1,6 +1,7 @@
 ---
 title: 模式设计
 date: 2019-10-13 09:59:28
+author: YOLO
 tags:
 - 思考
 - 学习笔记
