@@ -20,10 +20,12 @@ before_install:
 - npm i --save hexo-wordcount
 install:
 - npm i
-script:
+- hexo clean
 - hexo generate
 deploy:
-  provider: script
-  script: bash deploy.sh
+  provider: pages
+  skip_cleanup: false
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
   on:
     branch: master
