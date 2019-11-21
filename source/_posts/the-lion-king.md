@@ -2,6 +2,7 @@
 title: 观影心得-狮子王
 author: 翻车鱼
 tags: 电影 感悟
+date: 2019-08-11 09:59:28
 ---
 ![alt](https://upload.wikimedia.org/wikipedia/zh/0/08/The_Lion_King_2019_poster.jpg)
 
