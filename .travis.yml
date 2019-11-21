@@ -1,31 +1,18 @@
+sudo: false
 language: node_js
-node_js: stable
+node_js:
+  - 10 # use nodejs v10 LTS
+cache: npm
 branches:
   only:
-  - master
-cache:
-  apt: true
-  npm: true
-  directories:
-  - node_modules
-before_install:
-- openssl aes-256-cbc -K $encrypted_6c324be644e2_key -iv $encrypted_6c324be644e2_iv -in tx_deploy_key.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/id_rsa
-- npm install -g hexo-cli
-- npm install -g hexo-server
-- npm install -g hexo-deployer-rsync
-- npm install -g hexo-deployer-git
-- npm i --save hexo-wordcount
-install:
-- npm i
-- hexo clean
-- hexo generate
+    - master # build master branch only
+script:
+  - hexo generate # generate static files
 deploy:
   provider: pages
-  skip_cleanup: false
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
   on:
     branch: master
+  local-dir: public
