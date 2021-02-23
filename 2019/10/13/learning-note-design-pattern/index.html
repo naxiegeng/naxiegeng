@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://naxiegeng.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="一直非常认同《精益创业》中build-measure-learn的思想，认为做一件事就是要这样去尝试，评估效果，从中学习成长然后再开始下一个循环，如此循环往复滚雪球式的成长。但是我从来没有想过，无论是一个人是需要能量去驱动的，是会疲劳的。那么又是什么可以让一个人长期充满能量呢？今天早上有幸听了梁宁老师的课，从中获益匪浅。 梁宁老师提出了四种连接的概念，其中有正向作用的有两种：  因果链：因为-所以">
+<meta name="keywords" content="思考,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模式设计">
+<meta property="og:url" content="https://naxiegeng.github.io/2019/10/13/learning-note-design-pattern/index.html">
+<meta property="og:site_name" content="那些梗">
+<meta property="og:description" content="一直非常认同《精益创业》中build-measure-learn的思想，认为做一件事就是要这样去尝试，评估效果，从中学习成长然后再开始下一个循环，如此循环往复滚雪球式的成长。但是我从来没有想过，无论是一个人是需要能量去驱动的，是会疲劳的。那么又是什么可以让一个人长期充满能量呢？今天早上有幸听了梁宁老师的课，从中获益匪浅。 梁宁老师提出了四种连接的概念，其中有正向作用的有两种：  因果链：因为-所以">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://img.qingchengfit.cn/9421c822b2d7ba5fd33db87d7af8eaed.jpeg!middle">
+<meta property="og:updated_time" content="2021-02-23T07:59:20.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模式设计">
+<meta name="twitter:description" content="一直非常认同《精益创业》中build-measure-learn的思想，认为做一件事就是要这样去尝试，评估效果，从中学习成长然后再开始下一个循环，如此循环往复滚雪球式的成长。但是我从来没有想过，无论是一个人是需要能量去驱动的，是会疲劳的。那么又是什么可以让一个人长期充满能量呢？今天早上有幸听了梁宁老师的课，从中获益匪浅。 梁宁老师提出了四种连接的概念，其中有正向作用的有两种：  因果链：因为-所以">
+<meta name="twitter:image" content="https://img.qingchengfit.cn/9421c822b2d7ba5fd33db87d7af8eaed.jpeg!middle">
+
+<link rel="canonical" href="https://naxiegeng.github.io/2019/10/13/learning-note-design-pattern/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>模式设计 | 那些梗</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">那些梗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">厕所没纸街坊福利会</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://naxiegeng.github.io/2019/10/13/learning-note-design-pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Paper">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那些梗">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          模式设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-13 09:59:28" itemprop="dateCreated datePublished" datetime="2019-10-13T09:59:28+08:00">2019-10-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-23 15:59:20" itemprop="dateModified" datetime="2021-02-23T15:59:20+08:00">2021-02-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一直非常认同《精益创业》中build-measure-learn的思想，认为做一件事就是要这样去尝试，评估效果，从中学习成长然后再开始下一个循环，如此循环往复滚雪球式的成长。但是我从来没有想过，无论是一个人是需要能量去驱动的，是会疲劳的。那么又是什么可以让一个人长期充满能量呢？今天早上有幸听了梁宁老师的课，从中获益匪浅。</p>
+<p>梁宁老师提出了<em>四种连接</em>的概念，其中有正向作用的有两种：</p>
+<ul>
+<li>因果链：因为-所以。我做什么事情可以达到什么效果。</li>
+<li>增强回路：系统要稳定运作，就需要持续的动力。有增强回路，就意味着需要持续的外部正反馈，不断为系统增加能量，从而增强因果关系。</li>
+</ul>
+<p>理论上一个人把握了一件事的因果关系，又能不断的获得外部正反馈，那么这件事儿就可以不断推进下去，但是实际上还有两种拖后腿的连接：</p>
+<ul>
+<li>调节回路：节能是生物的本能，人都是懒惰的。</li>
+<li>滞后反馈：人们做了一件事都希望立即看到效果，错也好，对也好，最好能及时反馈，给个痛快。可以反馈基本是滞后的。</li>
+</ul>
+<p>对于减肥这个事情的因果链大家都知道管住嘴迈开腿就可以瘦，不断的从体重下降的满足感，朋友的鼓励的喜悦中就可以活动持续的动力，但是实际上减肥成功的人却非常少。因为人们都是懒惰的，都不喜欢忍受饥饿，而运动&amp;控制饮食带来的效果又是延后的，往往要经过数周甚至数月的努力才可以获得。在这个过程中很多人熬不住了就选择了放弃。</p>
+<p>我个人有过至少5次时长为3个月左右的减肥经历，其中有两次经历还算比较成功。回头想想这两次成功经历的背后都是有着很大的外部激励在不断给我能量，并不是我本身的强大。而几次失败的经历都在调节回路和滞后反馈的地狱陷阱中苦苦挣扎。如果再次决定减肥的话，我会设计一个模式，让我能够更容易获得正反馈，避免调节回路和滞后反馈的负面影响。比如说通过更科学的饮食减少饥饿的痛苦，通过更科学的训练安排获得更短的反馈周期等等。</p>
+<p>最后，对于一个人来说最重要的资源就是一个人的心理能量，拥有强大内心的人才能走出调节回路和滞后反馈的陷阱。战争以一方失去战斗意志为结束，而人生中以一个人失去信心和勇气为终点，愿我心中永远活着一个热血的少年。</p>
+<p><img src="https://img.qingchengfit.cn/9421c822b2d7ba5fd33db87d7af8eaed.jpeg!middle" alt="sun flower"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/思考/" rel="tag"># 思考</a>
+              <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/01/9-1-insomnia-writting/" rel="prev" title="九月一日夜，又失眠">
+      <i class="fa fa-chevron-left"></i> 九月一日夜，又失眠
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/17/Moneyball/" rel="next" title="Moneyball">
+      Moneyball <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Paper</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Paper</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
